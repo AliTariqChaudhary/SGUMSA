@@ -575,11 +575,12 @@ var DMath = {
 
 var PT = new PrayTimes('ISNA');
 	var times = PT.getTimes(new Date(), [12.001774512521257, -61.77238941192628], -4);
-	document.write('Fajr = '+ times.fajr);
-	document.write('<br>Sunrise = '+ times.sunrise);
-	document.write('<br>Dhuhr = '+ times.dhuhr);
-	document.write('<br>Asr = '+ times.asr);
-	document.write('<br>Isha = '+ times.isha);
+	document.write('<table style="width:50%"><tr><th> </th><th>Time</th><th>Iqamah</th></tr><tr><td>Fajr</td><td>'+ times.fajr + '</td><td>05:30</td></tr>')
+	document.write('<tr><td>Shuruk</td><td>' + times.sunrise +' </td><td> - </td></tr>');
+	document.write('<tr><td>Dhuhr</td><td>' + times.dhuhr +' </td><td> 12:30 </td></tr>');
+	document.write('<tr><td>Asr</td><td>' + times.asr +' </td><td> 4:40 PM </td></tr>');
+	document.write('<tr><td>Maghrib</td><td>' + times.maghrib +' </td><td> 6:15 PM </td></tr>');
+	document.write('<tr><td>Isha</td><td>' + times.isha +' </td><td> 8:15 PM </td></tr>');
 
 window.onload = function(){
 
@@ -588,5 +589,4 @@ window.onload = function(){
     prayTimes.getTimes(new Date(), [43, -80], -5);
     prayTimes.setMethod('ISNA');
 
-    document.getElementById('output').innerHTML = "jkdfsljfds";
 }
