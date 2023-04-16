@@ -157,11 +157,11 @@ function PrayTimes(method) {
 	setting = {  
 		imsak    : '10 min',
 		dhuhr    : '0 min',  
-		asr      : 'Standard',
+		asr      : 'Hanafi',
 		highLats : 'NightMiddle'
 	},
 
-	timeFormat = '24h',
+	timeFormat = '12h',
 	timeSuffixes = ['am', 'pm'],
 	invalidTime =  '-----',
 
@@ -573,20 +573,21 @@ var DMath = {
 //---------------------- Init Object -----------------------
 
 
-var PT = new PrayTimes('ISNA');
-	var times = PT.getTimes(new Date(), [12.001774512521257, -61.77238941192628], -4);
-	document.write('<table style="width:50%"><tr><th> </th><th>Time</th><th>Iqamah</th></tr><tr><td>Fajr</td><td>'+ times.fajr + '</td><td>05:30</td></tr>')
-	document.write('<tr><td>Shuruk</td><td>' + times.sunrise +' </td><td> - </td></tr>');
-	document.write('<tr><td>Dhuhr</td><td>' + times.dhuhr +' </td><td> 12:30 </td></tr>');
-	document.write('<tr><td>Asr</td><td>' + times.asr +' </td><td> 4:40 PM </td></tr>');
-	document.write('<tr><td>Maghrib</td><td>' + times.maghrib +' </td><td> 6:15 PM </td></tr>');
-	document.write('<tr><td>Isha</td><td>' + times.isha +' </td><td> 8:15 PM </td></tr>');
+var PT = new PrayTimes('Karachi');
+	var times = PT.getTimes(new Date(), [12.001774512521257, -61.77238941192628], -5);
+    document.write('<li class="pry-tim-hed"><span>Salah</span><span>Adhaan</span><span>Iqamah</span></li>');
+    document.write('<li><span class="thm-clr">Fajr</span><span>' + times.fajr + '</span><span>5:10 am</span></li>');
+    document.write('<li><span class="thm-clr">Sunrise</span><span>' + times.sunrise + '</span><span>' + times.sunrise + '</span></li>');
+    document.write('<li><span class="thm-clr">Dhuhr</span><span>' + times.dhuhr + '</span><span>12:15 pm</span></li>');
+	document.write('<li><span class="thm-clr">Asr</span><span>' + times.asr +  '</span><span>4:35 pm</span></li>');
+    document.write('<li><span class="thm-clr">Maghrib</span><span>' + times.maghrib + '</span><span>6:30 pm</span></li>');
+    document.write('<li><span class="thm-clr">Isha</span><span>' + times.isha +'</span><span>7:35 pm</span></li>');
+
 
 window.onload = function(){
 
     var prayTimes = new PrayTimes();
 
     prayTimes.getTimes(new Date(), [43, -80], -5);
-    prayTimes.setMethod('ISNA');
-
+    prayTimes.setMethod('Karachi');
 }
